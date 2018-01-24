@@ -89,7 +89,7 @@ class BootstrapPagerNode(Node):
             next_page_url = get_page_url(page.next_page_number(), context.current_app, url_view_name, url_extra_args, url_extra_kwargs, url_param_name, url_get_params)
 
         return get_template("bootstrap_pagination/pager.html").render(
-            Context({
+            context={
                 'page': page,
                 'centered': centered,
                 'previous_label': previous_label,
@@ -98,7 +98,7 @@ class BootstrapPagerNode(Node):
                 'next_title': next_title,
                 'previous_page_url': previous_page_url,
                 'next_page_url': next_page_url
-            }, autoescape=False))
+            })
 
 
 class BootstrapPaginationNode(Node):
@@ -202,7 +202,7 @@ class BootstrapPaginationNode(Node):
             next_page_url = get_page_url(page.next_page_number(), context.current_app, url_view_name, url_extra_args, url_extra_kwargs, url_param_name, url_get_params)
 
         return get_template("bootstrap_pagination/pagination.html").render(
-            Context({
+            context={
                 'page': page,
                 'alignment': alignment,
                 'size': size,
@@ -217,7 +217,7 @@ class BootstrapPaginationNode(Node):
                 'last_page_url': last_page_url,
                 'previous_page_url': previous_page_url,
                 'next_page_url': next_page_url
-            }, autoescape=False))
+            })
 
 
 @register.tag
